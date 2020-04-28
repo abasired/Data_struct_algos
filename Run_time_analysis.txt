@@ -1,0 +1,19 @@
+
+
+Time complexity for task0.py:
+In this program the operation of reading data from CSV is O(n+m),
+where n correspondes to rows in texts.csv and m corresponds to rows in calls.csv. Accessing these elements later on takes O(1) as they are simple multi dimentional arrays. So overall time complexity is the O(n+m).
+
+Time complexity for task1.py:
+As in Task0.py the initial read from csv has time complexity of O(n+m).
+However in the for loop below we go over each row for both calls.csv and texts.csv. Hence the total number of operations is given by 3n+3m. 
+Therefore the time complexity is O(n+m).
+
+Time complexity for task2.py:
+In this task, we compute time spent by each number in call list and store it in a dictionary. Finding the max value in this dictionary takes atmost m iterations. Later, searching for all the keys corresponding to max value takes another m operations. Hence time complexity is given by O(n+m) considering reading data from csv.
+
+Time complexity for task3.py:
+Ignoring the time taken for reading data from csv, for loop runs over all the rows in calls.csv and has time complexity of O(m).
+
+Time complexity for task4.py:
+Ignoring the time taken for reading data from csv, for loop runs over all the rows in calls.csv. Adding an element to a set data structure takes m operations in worst case scenario. Therefore worst-case time complexity is given by O(m^2).
