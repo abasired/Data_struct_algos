@@ -1,0 +1,1 @@
+In problem 2, we searched sub-directories/file in a specified path for files with desired suffix. Since the same operation is repeated multiple times, it seems reasonable to use recursion in this case. Later this is compared inbuilt os.walk() method. 

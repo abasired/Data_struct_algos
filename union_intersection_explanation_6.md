@@ -1,0 +1,3 @@
+To compute the union of two linked list, we create a combined two list by appending one list to another and scan over the entire combined list to obtain a union of two lists. is_value_present method is used to avoid duplications in the union. This seems to worst case Time complexity of O(n^2) where n is the maximum length of either of two lists.
+
+On the other hand to compute intersection of two list, we use the union to get combined list of both list and loop over each element to check if it is both the lists. This has same time complexity as union of lists.   
