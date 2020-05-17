@@ -20,4 +20,4 @@ In this task, we compute time spent by each number in call list and store it in 
 
 ### Task4.py:
 we scan through the outgoing calls and add telemarketers to the set. 
-* As sorting is invovled, Time complexity is $O(n\log(n))$
+* As sorting is involved, Time complexity is $O(n\log(n))$

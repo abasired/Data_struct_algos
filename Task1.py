@@ -26,14 +26,14 @@ Read the total number of records from texts and call into a set data structure
 Print the length of the set in the desired format.
 """
 
-for text_index in range(len(texts)):
+for text_index in texts:
     for num_info in range(len(texts[0]) - 1):  # Account for incoming and answering number in each texts record 
-        Total_unique_num.add(texts[text_index][num_info])
+        Total_unique_num.add(text_index[num_info])
 
         
-for call_index in range(len(calls)):
+for call_index in calls:
     for num_info in range(len(calls[0]) - 2):  # Account for incoming and answering number in each calls record
-        Total_unique_num.add(calls[call_index][num_info])
+        Total_unique_num.add(call_index[num_info])
 
 
 print("There are {} different telephone numbers in the records.".format(len(Total_unique_num)))
