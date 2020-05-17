@@ -27,12 +27,13 @@ The list of numbers should be print out one per line in lexicographic order with
 
 telemarketers = set()
 
-for i in range(len(calls)):
+for call_index in calls:
 
-    if calls[i][0].find("140") == 0:
-        telemarketers.add(calls[i][0])
+    #print(call_index[0].startswith("140"))
+    if call_index[0].startswith("140"):
+        telemarketers.add(call_index[0])
         
 print("These numbers could be telemarketers: ")
 
-for num in telemarketers:
-    print(num)
+print("\n".join(sorted(telemarketers)))
+

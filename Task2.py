@@ -22,15 +22,21 @@ September 2016.".
 
 Call_duration = {}
 
-for i in range(len(calls)):
-    for j in range(len(calls[0]) - 2):
-        if not (calls[i][j] in Call_duration.keys()) :
-            Call_duration[calls[i][j]] = 0
-        else:
-            Call_duration[calls[i][j]] += int(calls[i][-1])
+for call_index in calls:
+    
+    if call_index[0] in Call_duration:
+        Call_duration[call_index[0]] += int(call_index[3])
+    else:
+        Call_duration[call_index[0]] = int(call_index[3])
+        
+    if call_index[1] in Call_duration:
+        Call_duration[call_index[1]] += int(call_index[3])
+    else:
+        Call_duration[call_index[1]] = int(call_index[3])
+
 
 max_duration = max(Call_duration.values())
 
-Longest_call_num = [key for (key, value) in Call_duration.items() if value == max_duration]
+Longest_call_num = max(Call_duration, key = Call_duration.get)
 
-print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(Longest_call_num, Call_duration[Longest_call_num[0]]))
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(Longest_call_num, max_duration))

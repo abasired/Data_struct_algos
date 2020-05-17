@@ -44,34 +44,33 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-Blore_called_area_code = {"(080)" : 0}
+Blore_called_area_code = set()
+fixed_line_calls = 0
 Call_from_blore = 0
 
-for i in range(len(calls)):
-    if "(080)" in calls[i][0]:              # Identify caller from fixed line in Blore and maintain count of total # calls made
+for call_index in range(len(calls)):
+    
+    if "(080)" in calls[call_index][0]:              # Identify caller from fixed line in Blore and maintain count of total # calls made
+        
         Call_from_blore += 1
 
-        if " " in calls[i][1]:              # Identify mobile reciver 
-            Blore_called_area_code[calls[i][1][0:3]] = 1
+        if " " in calls[call_index][1]:              # Identify mobile reciver 
+            Blore_called_area_code.add(calls[call_index][1][0:4])
 
         else:
-            if ")" in calls[i][1]:          # Identify fixed line reciver 
+            if ")" in calls[call_index][1]:          # Identify fixed line reciver 
                 
-                if calls[i][1].find("(080)") == 0:  # clasiffy if the fixed line reciver is from Blore and maintain count
-                    Blore_called_area_code["(080)"] += 1
+                if calls[call_index][1].find("(080)") == 0:  # clasiffy if the fixed line reciver is from Blore and maintain count
+                    fixed_line_calls += 1
                                           
                 else:
-                    end_of_code_index = calls[i][1].index(")")
-                    Blore_called_area_code[calls[i][1][0:end_of_code_index+1]] = 1
+                    end_of_code_index = calls[call_index][1].index(")")
+                    Blore_called_area_code.add(calls[call_index][1][0:end_of_code_index+1])
             
 print("The numbers called by people in Bangalore have codes:")
+print("\n".join(sorted(Blore_called_area_code)))
 
-for key, value in Blore_called_area_code.items():
-
-    if value > 0:
-        print(key)
-
-fix_line_call_percentage = (Blore_called_area_code["(080)"]/Call_from_blore)*100
+fix_line_call_percentage = (fixed_line_calls/Call_from_blore)*100
         
 
 print("{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(fix_line_call_percentage))        
