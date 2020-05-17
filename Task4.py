@@ -25,11 +25,15 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-telemarketers = set()
+
+
+t
+elemarketers = set()
 
 for call_index in calls:
 
-    #print(call_index[0].startswith("140"))
+    #Telemarketers' numbers have no parentheses or space, but start with the code 140. Example: "1402316533".
+    # This is correct definition from the project introduction page. 
     if call_index[0].startswith("140"):
         telemarketers.add(call_index[0])
         
