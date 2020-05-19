@@ -1,0 +1,1 @@
+In this program to compute Floored square root of a number, we use binary search algorithm. This algorithm has time complexity of $O(\log(n))$ and space complexity of $O(1)$. As square of a number is always less than a twice the number($ n^2 < 2n, \forall n>2 $) binary search helps in reducing the time complexity of this algorithm in comparison to linear search.
