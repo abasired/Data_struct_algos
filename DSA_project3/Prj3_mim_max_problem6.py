@@ -38,11 +38,13 @@ def get_min_max(ints):
 ## Example Test Case of Ten Integers
 import random
 
-l = [i for i in range(0, 50)]  # a list containing 0 - 9
-random.shuffle(l)
+#l = [i for i in range(0, 50)]  # a list containing 0 - 9
+#random.shuffle(l)
 
-l=[]
+#empty list will assert
+#l=[]
+# Single element will output same value as min and max.
 #l= [4]
 
-print ("Pass" if ((0, 0) == get_min_max(l)) else "Fail")
+#print ("Pass" if ((0, 0) == get_min_max(l)) else "Fail")
 
