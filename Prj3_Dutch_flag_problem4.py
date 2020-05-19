@@ -13,31 +13,25 @@ def sort_012(input_list):
     Args:
        input_list(list): List to be sorted
     """
-    for num in [0,1,2]:
+    index = 0
+    
+    dict_012 = {'0': [], '1':[], '2':[]}
+    
+    assert len(input_list) > 0 , "input list is empty"
+    
+    while index < len(input_list):
         
-        index_1 = 0 
-        index = 1
+        dict_012[str(input_list[index])].append(input_list[index])
         
-        while index < len(input_list):
-            
-            element = input_list[index]
-            #print(input_list)
-            if input_list[index_1] <= num:
-                index_1 += 1
-            else:
-                if input_list[index_1] > element and element == num:
-                    input_list[index] = input_list[index_1]
-                    input_list[index_1] = element
-                    index_1 += 1
-            
-            index += 1               
+        index += 1
+        
                 
-    return input_list         
+    return dict_012['0'] + dict_012['1'] + dict_012['2']        
             
 
 def test_function(test_case):
     sorted_array = sort_012(test_case)
-    print(sorted_array)
+    #print(sorted_array)
     if sorted_array == sorted(test_case):
         print("Pass")
     else:
@@ -46,3 +40,6 @@ def test_function(test_case):
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
 test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
+test_function([0, 1, 0])
+test_function([0])
+#test_function([])

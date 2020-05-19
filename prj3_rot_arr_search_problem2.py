@@ -21,7 +21,7 @@ def rotated_array_search(input_list, number):
     while start_index <= end_index :
         
         middle_index = (start_index + end_index)//2
-        print(middle_index)
+        #print(middle_index)
         #print(input_list[middle_index])
         
         if input_list[middle_index] == number:
@@ -63,3 +63,5 @@ def test_function(test_case):
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test_function([[9,3], 2])
+test_function([[], 1])

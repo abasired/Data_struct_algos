@@ -56,6 +56,10 @@ def rearrange_digits(input_list):
     int2 = 0
     largest_index = 0
     
+    while len(input_list) < 2:
+        input_list.append(0)
+    
+    
     if len(sorted_list) % 2 != 0:
         largest_index = sorted_list.pop(-1)
 
@@ -84,5 +88,7 @@ def test_function(test_case):
 
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
+#test_case = [[4], [4, 0]]
+#test_case = [[], [0, 0]]
 test_function(test_case)
 
