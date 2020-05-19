@@ -27,17 +27,22 @@ The list of numbers should be print out one per line in lexicographic order with
 
 
 
-t
-elemarketers = set()
+outgoing_num = set()
+non_tele_num = set()
 
 for call_index in calls:
-
-    #Telemarketers' numbers have no parentheses or space, but start with the code 140. Example: "1402316533".
-    # This is correct definition from the project introduction page. 
-    if call_index[0].startswith("140"):
-        telemarketers.add(call_index[0])
+    
+    outgoing_num.add(call_index[0])
+    non_tele_num.add(call_index[1])
+    
+for text_index in texts:
+    
+    non_tele_num.add(text_index[0])
+    non_tele_num.add(text_index[1])
+    
+tele_set = outgoing_num - non_tele_num
         
 print("These numbers could be telemarketers: ")
 
-print("\n".join(sorted(telemarketers)))
+print("\n".join(sorted(tele_set)))
 

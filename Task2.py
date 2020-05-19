@@ -35,8 +35,8 @@ for call_index in calls:
         Call_duration[call_index[1]] = int(call_index[3])
 
 
-max_duration = max(Call_duration.values())
 
-Longest_call_num = max(Call_duration, key = Call_duration.get)
+Longest_call_num = max(Call_duration, key = lambda k: Call_duration[k])
 
-print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(Longest_call_num, max_duration))
+
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(Longest_call_num, Call_duration[Longest_call_num]))

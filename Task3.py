@@ -54,7 +54,7 @@ for call_index in range(len(calls)):
         
         Call_from_blore += 1
 
-        if " " in calls[call_index][1]:              # Identify mobile reciver 
+        if calls[call_index][1][1] in ['7','8','9']:              # Identify mobile reciver 
             Blore_called_area_code.add(calls[call_index][1][0:4])
 
         else:
