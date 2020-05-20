@@ -1,0 +1,7 @@
+In problem 2, we searched sub-directories/file in a specified path for files with desired suffix. Since the same operation is repeated multiple times, it seems reasonable to use recursion in this case. Later this is compared with inbuilt os.walk() method. 
+
+$n$ is the number of files in the directory.
+
+### complexity analysis
+1. Time complexity is $O(n)$
+2. Space Complexity is $O(n)$ (worst case)
