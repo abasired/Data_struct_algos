@@ -69,7 +69,6 @@ class LRU_Cache(object):
             self.put(key, self.dict[key])
             return self.dict[key]
         else:
-            self.put(key, key)
             return -1
 
     def put(self, key, value):
@@ -77,6 +76,7 @@ class LRU_Cache(object):
         # 
         if key in self.prioritynodelist.keys():
             self.linked_list.prioritize(self.prioritynodelist[key])
+            self.dict[key] = value
         else:
             if self.num_elements >= self.capacity:
                 self.prioritynodelist.pop(self.linked_list.tail.value)
@@ -90,21 +90,36 @@ class LRU_Cache(object):
             self.prioritynodelist[key] = self.linked_list.head        
 
 
-our_cache = LRU_Cache(5)
-
-print(our_cache.get(3))         #empty cache
-our_cache.put(1, 1);
-our_cache.put(2, 2);
-our_cache.put(3, 3);
-our_cache.put(4, 4);
-print(our_cache.get(4)) 
-
-#print(our_cache.get(1))       # returns 1
-#print(our_cache.get(2))       # returns 2
-#print(our_cache.get(9))      # returns -1 because 9 is not present in the cache
-
-our_cache.put(5, 5) 
-our_cache.put(6, 6)
+#our_cache = LRU_Cache(5)
+#
+#print(our_cache.get(3))         #empty cache
+#our_cache.put(1, 1);
+#our_cache.put(2, 2);
+#our_cache.put(3, 3);
+#our_cache.put(4, 4);
+#print(our_cache.get(4)) 
+#
+##print(our_cache.get(1))       # returns 1
+##print(our_cache.get(2))       # returns 2
+##print(our_cache.get(9))      # returns -1 because 9 is not present in the cache
+#
+#our_cache.put(5, 5) 
+#our_cache.put(6, 6)
 
 #print(our_cache.get(4))      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
 #print(our_cache.dict)
+
+our_cache=LRU_Cache(3)
+our_cache.put(1,1)
+our_cache.put(2,2)
+our_cache.put(3,3)
+our_cache.put(4,4)
+print(our_cache.get(4))   # Expected Value = 4
+print(our_cache.get(1))   # Expected Value = -1
+our_cache.put(2,4)
+our_cache.get(2)   # Expected Value = 4
+our_cache.put(5,5)
+print(our_cache.get(3))   # Expected Value = -1
+print(our_cache.get(5))  # Expected Value = 5
+our_cache.put(2,6)
+print(our_cache.get(2))   # Expected Value = 6 Your Output = 4

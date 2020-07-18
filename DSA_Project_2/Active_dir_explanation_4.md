@@ -3,4 +3,4 @@ Basically, in a group comprising of subgroups and users, the idea is to check if
 
 ### complexity analysis
 1. Time complexity is $O(n)$ 
-2. Space Complexity is $O(1)$
+2. Space Complexity is $O(n)$

@@ -7,4 +7,4 @@ In this program, we maintain a doubly linked list of all nodes in an order with 
 
 ### complexity analysis
 1. Time complexity is $O(1)$
-2. Space Complexity is $O(1)$
+2. Space Complexity is $O(n)$

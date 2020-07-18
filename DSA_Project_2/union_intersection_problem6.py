@@ -73,7 +73,7 @@ def union(llist_1, llist_2):
     temp_list = LinkedList()
     union_list = LinkedList()
     
-    assert llist_1.size() > 0 and llist_2.size > 0, "lists are empty"
+    assert llist_1.size() > 0 and llist_2.size() > 0, "lists are empty"
     
     
     node1 = llist_1.head
